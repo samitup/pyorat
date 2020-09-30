@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-
 const App = () => {
   const [stations, setStations] = useState([])
 
@@ -16,29 +15,29 @@ const App = () => {
   }, [])
 
   const renderTableData = () => {
-
+    
     return stations.map((station) => {
 
       return (
         <table>
           <thead>
             <tr>
-              <th>Name</th>
+              <th>Name:</th>
               <th>Free bikes:</th>
+              <th>Empty slots:</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>{station.name}</td>
-              <br /><td>{station.free_bikes}</td>
+              <td>{station.free_bikes}</td>
+              <td>{station.empty_slots}</td>
             </tr>
           </tbody>
         </table>
       )
     })
   }
-
-
 
   return (
     <div>
